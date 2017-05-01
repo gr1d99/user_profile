@@ -24,9 +24,7 @@ this app creates a user_profile instance automatically the user is added to the 
 
 6. for styling add ```<link href="{% static 'user_profile/css/profile.css' %}" rel="stylesheet">``` to your ```base.html```
 
-7. the app provides ```{% update_link %}``` and ```{% profile_link %}``` which is accessed by adding
-
-```{% load navigation_links %}``` at the top of the ```html file```.
+7. the app provides ```{% update_link %}``` and ```{% profile_link %}``` tags which is accessed by adding ```{% load navigation_links %}``` at the top of the ```html file```.
 
 
 
