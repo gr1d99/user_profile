@@ -19,7 +19,8 @@ this app creates a user_profile instance automatically the user is added to the 
            ...
            os.path.join(BASE_DIR, 'user_profile/cdn/staticfiles'),
            ...
-       ]```
+       ]
+   ```
 
 6. for styling add ```<link href="{% static 'user_profile/css/profile.css' %}" rel="stylesheet">``` to your ```base.html```
 
