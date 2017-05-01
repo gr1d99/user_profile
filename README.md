@@ -12,6 +12,17 @@ this app creates a user_profile instance automatically the user is added to the 
 
 4. run ``` python manage.py makemigrations``` then ```python manage.py migrate```.
 
+5. add ```os.path.join(BASE_DIR, 'user_profile/cdn/staticfiles')``` to your STATICFILES_DIRS such that
+   it looks like ```python
+   STATICFILES_DIRS = [
+       ...
+       os.path.join(BASE_DIR, 'user_profile/cdn/staticfiles'),
+       ...
+       ]
+
+6. for styling add ```<link href="{% static 'user_profile/css/profile.css' %}" rel="stylesheet">``` to your ```base.html```
+
+
 
 
 
