@@ -8,10 +8,6 @@ from permissions import ProfileOwnerMixin
 from braces.views import LoginRequiredMixin
 
 
-class Index(TemplateView):
-    template_name = 'base.html'
-
-
 class UserProfileDetailView(LoginRequiredMixin, ProfileOwnerMixin, DetailView):
     model = UserProfile
     template_name = 'user_profile/userprofile_detail.html'
