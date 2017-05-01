@@ -1,0 +1,66 @@
+<div id="location" class="tab-pane">
+	<div class="profile-contact row">
+
+		<div class="col-sm-6">
+			<div class="profile-info-row">
+				<div class="profile-info-name"> Country </div>
+
+				<div class="profile-info-value">
+					<span>
+                        {% if userprofile.userprofile_location.country %}
+                            {{ userprofile.userprofile_location.country }}
+                        {% else %}
+                            Not Provided
+                        {% endif %}
+                    </span>
+				</div>
+
+			</div>
+			<div class="profile-info-row">
+				<div class="profile-info-name"> City </div>
+
+				<div class="profile-info-value">
+					<span>
+                        {% if userprofile.userprofile_location.city %}
+                            {{ userprofile.userprofile_location.city }}
+                        {% else %}
+                            Not Provided
+                        {% endif %}
+                    </span>
+				</div>
+
+			</div>
+			<div class="profile-info-row">
+				<div class="profile-info-name"> Town </div>
+
+				<div class="profile-info-value">
+					<span>
+                        {% if userprofile.userprofile_location.town %}
+                            {{ userprofile.userprofile_location.town }}
+                        {% else %}
+                            Not Provided
+                        {% endif %}
+                    </span>
+				</div>
+
+			</div>
+			<div class="profile-info-row">
+				<div class="profile-info-name"> Postal Code </div>
+
+				<div class="profile-info-value">
+					<span>
+                        {% if userprofile.userprofile_location.postal_code %}
+                            {{ userprofile.userprofile_location.postal_code }}
+                        {% else %}
+                            Not Provided
+                        {% endif %}
+                    </span>
+				</div>
+
+			</div>
+
+		</div>
+		<!-- /.col -->
+	</div><!-- /.row -->
+	<div class="space-12"></div>
+</div><!-- /#location -->

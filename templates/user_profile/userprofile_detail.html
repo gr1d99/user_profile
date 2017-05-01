@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}
+    {{ object.user|capfirst }}
+{% endblock title %}
+
+{% block content %}
+    <div class="container">
+
+        <h1 class="page-header text-center">Profile Information for {{ request.user|upper }}</h1>
+
+        <div class="userprofile">
+
+            <div id="user-profile-2" class="user-profile">
+
+                <div class="tabbable">
+
+                    {% include 'user_profile/tags/userprofile_detail_snippets/tabs.html' %}
+
+                    <div class="tab-content no-border padding-24">
+
+                        {% include 'user_profile/tags/userprofile_detail_snippets/basic.html' %}
+
+                        {% include 'user_profile/tags/userprofile_detail_snippets/contact.html' %}
+
+                        {% include 'user_profile/tags/userprofile_detail_snippets/location.html' %}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock content %}

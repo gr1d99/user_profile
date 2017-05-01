@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+    form
+{% endblock title %}
+
+{% block content %}
+    <div class="container-fluid">
+        {% include 'user_profile/tags/messages.html' %}
+        <form method="post" action="">
+            {% csrf_token %}
+            <div class="form-group">
+                <h3>Basic Information</h3>
+            </div>
+            {{ form.basic }}
+            <div class="form-group">
+                <br/>
+                <input type="submit" class="btn btn-primary btn-block" value="Update Profile">
+            </div>
+        </form>
+    </div>
+{% endblock content %}

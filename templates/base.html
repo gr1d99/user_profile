@@ -1,0 +1,55 @@
+{% load static %}
+{% load dependancies %}
+{% load navigation_links %}
+{% check_requirements %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{% static 'font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'user_profile/css/style.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'user_profile/css/profile.css' %}" rel="stylesheet" type="text/css">
+
+    <title>
+        {% block title %}
+            {{ title }}
+        {% endblock title %}
+    | Profile
+    </title>
+</head>
+<body>
+
+<ul class="nav nav-pills">
+    <li role="presentation" class="active"><a href="{% url 'user_profile:userprofile_index' %}">Home</a></li>
+
+    {% if  request.user.is_authenticated %}
+        {% profile_link %}
+        <li role="presentation"><a href="{% url 'account_logout' %}">Logout</a></li>
+
+    {% else %}
+        <li role="presentation"><a href="{% url 'account_login' %}">Login</a></li>
+    {% endif %}
+</ul>
+
+{% include 'user_profile/tags/messages.html' %}
+
+{% block content %}
+
+{% endblock content %}
+
+ <!-- JS -->
+<script src="{% static 'js/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

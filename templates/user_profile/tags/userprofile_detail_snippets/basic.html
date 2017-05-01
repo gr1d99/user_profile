@@ -1,0 +1,110 @@
+{% load navigation_links %}
+
+<div id="basic" class="tab-pane in active">
+	<div class="row">
+		<div class="col-xs-12 col-sm-3 center">
+			<span class="profile-picture">
+				<img class="editable img-responsive" alt=" {{ request.user|capfirst }}" id="avatar2" src="{% if userprofile.userprofile_basic.image %}{{ userprofile.userprofile_basic.image.url }}{% else %}{% endif %}">
+			</span>
+
+			<div class="space space-4"></div>
+
+		</div><!-- /.col -->
+
+		<div class="col-xs-12 col-sm-9">
+			<h4 class="blue">
+				<span class="middle">{% update_link %}</span>
+
+				<span class="label label-purple arrow-circle-o-right">
+					<i class="ace-icon fa fa-circle smaller-80 align-middle"></i>
+					online
+				</span>
+			</h4>
+
+			<div class="profile-user-info">
+				<div class="profile-info-row">
+					<div class="profile-info-name"> Username </div>
+
+					<div class="profile-info-value">
+						<span>{{ request.user|capfirst }}</span>
+					</div>
+				</div>
+
+				<div class="profile-info-row">
+					<div class="profile-info-name"> First Name </div>
+
+					<div class="profile-info-value">
+						<span>{{ userprofile.userprofile_basic.first_name }}</span>
+					</div>
+				</div>
+
+                <div class="profile-info-row">
+					<div class="profile-info-name"> Middle Name </div>
+
+					<div class="profile-info-value">
+						<span>{{ userprofile.userprofile_basic.middle_name }}</span>
+					</div>
+				</div>
+
+				<div class="profile-info-row">
+					<div class="profile-info-name"> Last Name </div>
+
+					<div class="profile-info-value">
+						<span>{{ userprofile.userprofile_basic.last_name }}</span>
+					</div>
+				</div>
+
+				<div class="profile-info-row">
+					<div class="profile-info-name"> Age </div>
+
+					<div class="profile-info-value">
+						<span>{{ userprofile.userprofile_basic.age }}</span>
+					</div>
+
+				</div>
+
+				<div class="profile-info-row">
+					<div class="profile-info-name"> Joined </div>
+
+					<div class="profile-info-value">
+						<span>{{ request.user.date_joined }}</span>
+					</div>
+				</div>
+
+				<div class="profile-info-row">
+					<div class="profile-info-name"> Last Login </div>
+
+					<div class="profile-info-value">
+						<span>{{ request.user.last_login|timesince }} ago</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="hr hr-8 dotted"></div>
+
+		</div><!-- /.col -->
+	</div><!-- /.row -->
+
+	<div class="space-20"></div>
+
+	<div class="row">
+		<div class="col-xs-12 col-sm-6">
+			<div class="widget-box transparent">
+				<div class="widget-header widget-header-small">
+					<h4 class="widget-title smaller">
+						<i class="ace-icon fa fa-check-square-o bigger-110"></i>
+						Little About Me
+					</h4>
+				</div>
+
+				<div class="widget-body">
+					<div class="widget-main">
+						<p>
+							{{ userprofile.userprofile_basic.biography }}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!-- /#basic -->

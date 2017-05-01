@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% block title %}
+form
+{% endblock title %}
+
+{% block content %}
+<div class="container-fluid">
+	<div class="col-lg-6 col-lg-offset-3">
+
+		<form method="post" action="{% url 'user_profile:userprofile_update' request.user %}" enctype="multipart/form-data">
+			{% csrf_token %}
+
+			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="basicHeading">
+						<h4 class="panel-title text-center">
+							<a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#basic" aria-expanded="true" aria-controls="collapseOne">
+                                 Basic Information(click me)
+							</a>
+						</h4>
+					</div>
+					<div id="basic" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="basicHeading">
+						<div class="panel-body">
+							<div class="userprofile">
+								<div class="form-group">
+									<h3 class="page-header text-center"></h3>
+								</div>
+								{{ form.basic|crispy }}
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="basicHeading">
+						<h4 class="panel-title text-center">
+							<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#contact" aria-expanded="false" aria-controls="contact">
+								Contact Information(click me)
+							</a>
+						</h4>
+					</div>
+					<div id="contact" class="panel-collapse collapse" role="tabpanel" aria-labelledby="contactHeading">
+						<div class="panel-body">
+							<div class="userprofile">
+								<div class="form-group">
+									<h3 class="page-header text-center"></h3>
+								</div>
+								{{ form.contact|crispy }}
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="locationHeading">
+						<h4 class="panel-title text-center">
+							<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#location" aria-expanded="false" aria-controls="location">
+								Location Information(click me)
+							</a>
+						</h4>
+					</div>
+					<div id="location" class="panel-collapse collapse" role="tabpanel" aria-labelledby="locationHeading">
+						<div class="panel-body">
+
+							<div class="userprofile">
+								<div class="form-group">
+									<h3 class="page-header text-center"></h3>
+								</div>
+								{{ form.location|crispy }}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<br/>
+				<input type="submit" class="btn btn-primary btn-block" value="Update Profile">
+			</div>
+		</form>
+	</div>
+</div>
+{% endblock content %}

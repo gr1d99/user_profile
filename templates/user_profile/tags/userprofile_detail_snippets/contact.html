@@ -1,0 +1,82 @@
+<div id="contact" class="tab-pane">
+	<div class="profile-contact row">
+
+		<div class="col-sm-6">
+			<div class="profile-info-row">
+				<div class="profile-info-name"> Mobile </div>
+
+				<div class="profile-info-value">
+					<span>{{ userprofile.userprofile_contact.mobile }}</span>
+				</div>
+
+			</div>
+			<div class="profile-info-row">
+				<div class="profile-info-name"> Telephone </div>
+
+				<div class="profile-info-value">
+					<span>{{ userprofile.userprofilebasic.telephone }}</span>
+				</div>
+
+			</div>
+			<div class="profile-info-row">
+				<div class="profile-info-name">
+					<i class="middle ace-icon fa fa-internet-explorer bigger-150 blue"></i>
+				</div>
+
+				<div class="profile-info-value">
+					{% if userprofile.userprofile_contact.website %}
+					<a href="{{ userprofile.userprofile_contact.website }}" target="_blank">{{ userprofile.userprofile_contact.website }}</a>
+					{% else %}
+					Not Provided
+					{% endif %}
+				</div>
+
+			</div>
+
+			<div class="profile-info-row">
+				<div class="profile-info-name">
+					<i class="middle ace-icon fa fa-skype bigger-150 blue"></i>
+				</div>
+
+				<div class="profile-info-value">
+					{% if userprofile.userprofile_contact.SKYPE %}
+					<a href="https://skype.com/{{ userprofile.userprofile_contact.SKYPE }}">Skype me </a>
+					{% else %}
+					Not Provided
+					{% endif %}
+				</div>
+
+			</div>
+			<div class="profile-info-row">
+				<div class="profile-info-name">
+					<i class="middle ace-icon fa fa-facebook-square bigger-150 blue"></i>
+				</div>
+
+				<div class="profile-info-value">
+					{% if userprofile.userprofile_contact.FACEBOOK %}
+					<a href="https://facebook.com/{{ userprofile.userprofile_contact.FACEBOOK }}">Find me on Facebook </a>
+					{% else %}
+					Not Provided
+					{% endif %}
+				</div>
+
+			</div>
+			<div class="profile-info-row">
+				<div class="profile-info-name">
+					<i class="middle ace-icon fa fa-twitter-square bigger-150 blue"></i>
+				</div>
+
+				<div class="profile-info-value">
+					{% if userprofile.userprofile_contact.TWITTER %}
+					<a href="https://twitter.com/{{ userprofile.userprofile_contact.TWITTER }}">Follow me on Twitter </a>
+					{% else %}
+					Not Provided
+					{% endif %}
+				</div>
+
+			</div>
+		</div>
+		<!-- /.col -->
+	</div><!-- /.row -->
+	<div class="space-12"></div>
+</div><!-- /#contact -->
