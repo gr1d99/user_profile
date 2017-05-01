@@ -26,7 +26,7 @@ this app creates a user_profile instance automatically the user is added to the 
 
 7. the app provides ```{% update_link %}``` and ```{% profile_link %}``` which returns
 
--a url which points to update profile
+..* a url which points to update profile.
 
 ..* ***a url which points to the specific profile***
 
