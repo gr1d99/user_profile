@@ -1,5 +1,5 @@
 # user_profile
-is an app that allows lazy django developers to hook it to there django projects.
+is an app that allows new django developers to have a user_profile app to there django projects.
 
 this app creates a user_profile instance automatically the user is added to the default django ```User``` model.
 
