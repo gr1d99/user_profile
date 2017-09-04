@@ -1,1 +1,2 @@
 cdn/* linguist-vendored
+*.html linguist-language=Python
